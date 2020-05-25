@@ -1,7 +1,6 @@
-# downloadjs
+# downloadjs JS下载工具
 下载支持post，get
 
-# JS下载工具
 ```
 Download("http://127.0.0.1:3001/api/download/get");
 Download("http://127.0.0.1:3001/api/download/post", {
