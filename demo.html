@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>downloadjs demo</title>
-</head>
-<body>
-  <div>test</div>
-  <script type="text/javascript" src="./bower_components/mockjs/dist/mock.js"></script>
-  <script src="./download.js"></script>
-  <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>downloadjs demo</title>
+  </head>
+  <body>
+    <div>test</div>
+    <button id="get_button">点击测试get方法</button>
+    <button id="post_button">点击测试post方法</button>
+    <script
+      type="text/javascript"
+      src="./bower_components/mockjs/dist/mock.js"
+    ></script>
+    <script src="./download.js"></script>
+    <script>
+      document
+        .querySelector("#get_button")
+        .addEventListener("click", function () {
+          // 默认 get 方法
+          Download("http://127.0.0.1:3001/api/download/get");
+        });
 
-  </script>
-</body>
+      document
+        .querySelector("#post_button")
+        .addEventListener("click", function () {
+          Download("http://127.0.0.1:3001/api/download/post", {
+            method: "POST",
+            data:{
+              id: [1, 2],
+            }
+          });
+        });
+    </script>
+  </body>
 </html>
